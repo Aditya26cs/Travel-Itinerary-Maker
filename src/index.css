@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background-color: #f4f6f8;
+}
+
+@theme {
+  /* 2. Define your Brand Colors */
+  --color-primary: #0f766e; /* Teal-700 */
+  --color-primary-hover: #0d9488; /* Teal-600 */
+  --color-secondary: #f59e0b; /* Amber-500 (for "Warning" or "Price" accents) */
+
+  /* 3. Define Modern Backgrounds */
+  --color-bg-main: #f8fafc; /* Slate-50 (Not stark white, easier on eyes) */
+  --color-bg-card: #ffffff;
+
+  /* 4. Set the Font Family */
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+
+  /* 5. Custom Border Radius for that "App" feel */
+  --radius-card: 1rem; /* 16px - nice and round */
+  --radius-btn: 0.5rem; /* 8px */
+}
+
+/* 6. Global Resets for a cleaner look */
+:root {
+  background-color: var(--color-bg-main);
+  color: #1e293b; /* Slate-800 (Never use pure black text) */
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 7. Utility to hide scrollbars but keep functionality (looks cleaner) */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* 8. Smooth fade-in animation for pages */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
